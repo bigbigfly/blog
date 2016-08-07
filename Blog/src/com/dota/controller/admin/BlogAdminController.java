@@ -48,7 +48,7 @@ public class BlogAdminController {
 		int resultTotal=0; 
 		if(blog.getId()==null){
 			resultTotal=blogService.add(blog);
-			//blogIndex.addIndex(blog);
+			blogIndex.addIndex(blog);
 		}else{
 			resultTotal=blogService.update(blog);
 			//blogIndex.updateIndex(blog);
