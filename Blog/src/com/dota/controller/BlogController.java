@@ -105,15 +105,15 @@ public class BlogController {
 			page="1";
 		}
 		ModelAndView mav=new ModelAndView();
-//		mav.addObject("pageTitle", "搜索关键字'"+q+"'结果页面_java开源博客系统");
-//		mav.addObject("mainPage", "foreground/blog/result.jsp");
-//		List<Blog> blogList=blogIndex.searchBlog(q);
-//		Integer toIndex=blogList.size()>=Integer.parseInt(page)*pageSize?Integer.parseInt(page)*pageSize:blogList.size();
-//		mav.addObject("blogList", blogList.subList((Integer.parseInt(page)-1)*pageSize, toIndex));
-//		mav.addObject("pageCode",this.genUpAndDownPageCode(Integer.parseInt(page), blogList.size(), q, pageSize, request.getServletContext().getContextPath()));
-//		mav.addObject("q", q);
-//		mav.addObject("resultTotal", blogList.size());
-//		mav.setViewName("mainTemp");
+		mav.addObject("pageTitle", "搜索关键字'"+q+"'结果页面_java开源博客系统");
+		mav.addObject("mainPage", "foreground/blog/result.jsp");
+		List<Blog> blogList=blogIndex.searchBlog(q);
+		Integer toIndex=blogList.size()>=Integer.parseInt(page)*pageSize?Integer.parseInt(page)*pageSize:blogList.size();
+		mav.addObject("blogList", blogList.subList((Integer.parseInt(page)-1)*pageSize, toIndex));
+		mav.addObject("pageCode",this.genUpAndDownPageCode(Integer.parseInt(page), blogList.size(), q, pageSize, request.getServletContext().getContextPath()));
+		mav.addObject("q", q);
+		mav.addObject("resultTotal", blogList.size());
+		mav.setViewName("mainTemp");
 		return mav;
 	}
 	

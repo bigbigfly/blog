@@ -51,7 +51,7 @@ public class BlogAdminController {
 			blogIndex.addIndex(blog);
 		}else{
 			resultTotal=blogService.update(blog);
-			//blogIndex.updateIndex(blog);
+			blogIndex.updateIndex(blog);
 		}
 		JSONObject result=new JSONObject();
 		if(resultTotal>0){
@@ -103,7 +103,7 @@ public class BlogAdminController {
 		String []idsStr=ids.split(",");
 		for(int i=0;i<idsStr.length;i++){
 			blogService.delete(Integer.parseInt(idsStr[i]));
-			//blogIndex.deleteIndex(idsStr[i]);
+			blogIndex.deleteIndex(idsStr[i]);
 		}
 		JSONObject result=new JSONObject();
 		result.put("success", true);
